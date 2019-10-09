@@ -1,3 +1,45 @@
-h1 {
-    color: red;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    background-color: rgb(60, 99, 68);
+    color: white;
+    padding: 20px;
+}
+
+.nav-brand, .nav-links {
+    width: 50%;
+}
+
+li {
+    display: inline-block;
+    margin: 0 10px;
+    list-style-type: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.donate-btn {
+    text-align: center;
+    width: 100px;
+    background-color: rgb(236, 236, 73);
+    color: black;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 40px;
+    background-color: rgb(2, 27, 2);
+    color: rgb(243, 242, 242);
 }
