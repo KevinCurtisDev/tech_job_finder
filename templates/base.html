@@ -1,14 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <title>Job Finder</title>
 </head>
 <body>
+    <!-- nav bar section -->
+    {% include 'partials/_navbar.html' %}
+
+    <!-- main content -->
     {% block content %} 
     
     {% endblock %}
+
+    <!-- footer section -->
+    {% include 'partials/_footer.html' %}
+
 </body>
 </html>
