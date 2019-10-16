@@ -1,12 +1,13 @@
 <nav>
     <div class="nav-brand">
-        <h1>Job Finder</h1>
+            <a href="{% url 'index' %}"><h1>Job Finder</h1></a>
     </div>
     <div class="nav-links">
         <ul>
-            <a href="#"><li>About</li></a>
+            <a href="{% url 'about' %}"><li>About</li></a>
             <a href="#"><li>Log in</li></a>
-            <a href="#"><li>Sign up</li></a>
+            <a href="#"><li>Log out</li></a>
+            <a href="#"><li class="signup-btn">Sign up</li></a>
             <a href="#"><li class="donate-btn">Donate</li></a>
         </ul>
     </div>
