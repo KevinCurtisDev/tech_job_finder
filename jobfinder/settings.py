@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'pages.apps.PagesConfig',
+    'jobs.apps.JobsConfig',
+    'recruiters.apps.RecruitersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -76,8 +78,11 @@ WSGI_APPLICATION = 'jobfinder.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'jobfinder',
+        'USER': 'postgres',
+        'PASSWORD': 'K155MyA551891',
+        'HOST': 'localhost'
     }
 }
 
