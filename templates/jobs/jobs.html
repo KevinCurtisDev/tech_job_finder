@@ -1,21 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Jobs</h1>
-<section class="job-listing">
-        <div class="job-listing__card">
-            <h3>Job title: </h3>
-            <p>Location: </p>
-            <p>Salary: </p>
-            <p>Permamnent | Contract</p>
-            <a href="#" class="job-listing__card-btn">View details</a>
-        </div>
-        <div class="job-listing__card">
-            <h3>Job title: </h3>
-            <p>Location: </p>
-            <p>Salary: </p>            
-            <p>Permamnent | Contract</p>
-            <a href="#" class="job-listing__card-btn">View details</a>
-        </div>
+    <h1>Jobs</h1>
+    <section class="job-listing">
+        {% if jobs %}
+            {% for job in jobs %}
+                <div class="job-listing__card">
+                    <h3>{{ job.title }}</h3>
+                    <br>
+                    <p>{{ job.job_type }}</p>
+                    <p>Salary: €{{ job.salary }}k</p>
+                    <br>
+                    <p>{{ job.description }}</p>
+                    <br>
+                    <p>Date listed: {{job.listed_date}}</p>
+                    <p>Listed by {{job.recruiter}}</p>
+                    <br>
+                    <a href="{% url 'job' job.id %}" class="job-listing__card-btn">View details</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No jobs listed</p>
+        {% endif %}
     </section>
 {% endblock %}
