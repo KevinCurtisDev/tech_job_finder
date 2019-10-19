@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 nav {
     display: flex;
     width: 100%;
@@ -23,7 +27,6 @@ li {
 }
 
 nav a {
-    text-decoration: none;
     color: white;
 }
 
@@ -96,6 +99,40 @@ nav a {
     width: 150px;
     border-radius: 3px;
     font-size: .9rem;
+}
+
+.pagination-wrapper {
+    position: relative;
+    height: 60px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.pagination {
+    position: absolute;
+    max-width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 50%;
+    transform: translate(-50%);
+}
+
+.pagination a {
+    color: rgb(1, 36, 1);
+}
+
+.list-item {
+    width: 20px;
+    height: 20px;
+    text-align:center;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 3px;
+}
+
+.active {
+    background: rgb(159, 252, 159);
 }
 
 footer {

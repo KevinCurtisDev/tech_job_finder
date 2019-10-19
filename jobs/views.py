@@ -4,8 +4,8 @@ from django.core.paginator import EmptyPage, Paginator
 from .models import Job
 
 def index(request):
-    # set job variable to hold job info from database
-    jobs = Job.objects.all()
+    # set job variable to hold job info from database (ordered by date)
+    jobs = Job.objects.order_by('-listed_date')
 
     # set nuber of jobs to be listed per page 
     paginator = Paginator(jobs, 2)
