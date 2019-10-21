@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.core.paginator import EmptyPage, Paginator
 
 from .models import Job
@@ -22,8 +22,14 @@ def index(request):
 
 
 def job(request, job_id):
+    # SEt job variable to return the job data or a 404 if job id does not exist
+    job = get_object_or_404(Job, pk=job_id)
+
+    context = {
+        'job': job
+    }
     # return a dynamically created url for individual job listings
-    return render(request, 'jobs/job.html')
+    return render(request, 'jobs/job.html', context)
 
 
 def search(request):
