@@ -2,4 +2,11 @@
 
 {% block content %}
     <h1>login</h1>
+    <form action="{% url 'dashboard' %}" method="POST">
+        <!-- Add cs_rf token to prevent cross sight forgery -->
+        {% csrf_token %}
+        <input type="email" name="email">
+        <input type="password" name="password" required placeholder="Password">
+        <input type="submit" value="Log in">
+    </form>
 {% endblock %}
