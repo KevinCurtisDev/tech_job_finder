@@ -13,6 +13,7 @@
             <br>
             <p>Date listed: {{job.listed_date}}</p>
             <p>Listed by {{job.recruiter}}</p>
+            <img src="{{ job.recruiter.photo.url }}" alt="">
         </div>
     </section>
 {% endblock %}

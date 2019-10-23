@@ -33,4 +33,16 @@ def job(request, job_id):
 
 
 def search(request):
-    return render(request, 'jobs/search.html')
+    query = Job.objects.order_by('-listed_date')
+
+    if 'keywords' in request.GET:
+        keywords = request.GET['keywords']
+        if keywords:
+            query = query.filter(title__icontains=keywords)
+
+    context = {
+        'jobs': query
+    }
+
+
+    return render(request, 'jobs/search.html', context)

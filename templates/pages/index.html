@@ -2,7 +2,10 @@
 
 {% block content %}
 <section class="hero-img">
-    <input class="hero-img__search-bar" type="text" placeholder="Search jobs....">
+    <form action="{% url 'search' %}">
+            <input class="hero-img__search-bar" type="text" name="keywords" placeholder="Search jobs....">
+            <input type="submit" value="search">
+    </form>
 </section>
 <h2>Latest Job Posts</h2>
 <section class="job-listing">
