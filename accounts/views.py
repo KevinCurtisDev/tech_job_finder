@@ -1,9 +1,25 @@
 from django.shortcuts import render, redirect
-from django.contrib import messages
+from django.contrib import messages, auth
 from django.contrib.auth.models import User
 
 def login(request):
-    return render(request, 'accounts/login.html')
+    if request.method == 'POST':
+        email = request.POST['email']
+        password = request.POST['password']
+
+        user = auth.authenticate(email=email, password=password)
+
+        if user is not None:
+            auth.login(request, user)
+            messages.success(request, 'You are logged in')
+            return redirect('dashboard')
+        else:
+            messages.error(request, 'Invalid email or password')
+            return redirect('login')
+    else:
+        return render(request, 'accounts/login.html')
+
+    
 
 def register(request):
     '''
