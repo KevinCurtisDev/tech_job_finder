@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    {% include 'partials/_message.html' %}
     <h1>login</h1>
     <form action="{% url 'dashboard' %}" method="POST">
         <!-- Add cs_rf token to prevent cross sight forgery -->
