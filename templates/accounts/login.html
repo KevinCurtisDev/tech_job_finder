@@ -3,11 +3,13 @@
 {% block content %}
     {% include 'partials/_message.html' %}
     <h1>login</h1>
-    <form action="{% url 'login' %}" method="POST">
-        <!-- Add cs_rf token to prevent cross sight forgery -->
-        {% csrf_token %}
-        <input type="text" name="username" required placeholder="User name...">
-        <input type="password" name="password" required placeholder="Password...">
-        <input type="submit" value="Log in">
-    </form>
+    <section class="form">
+        <form action="{% url 'login' %}" method="POST">
+            <!-- Add cs_rf token to prevent cross sight forgery -->
+            {% csrf_token %}
+            <input type="text" name="username" required placeholder="User name...">
+            <input type="password" name="password" required placeholder="Password...">
+            <input type="submit" value="Log in" class="form-btn">
+        </form>
+    </section>
 {% endblock %}

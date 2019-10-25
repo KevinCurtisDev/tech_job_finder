@@ -2,6 +2,11 @@
 
 {% block content %}
     <h1>Search Results</h1>
+    <section class="job-search">
+        <form action="{% url 'search' %}">
+            <input class="search-bar" type="text" name="keywords" placeholder="Search jobs....">
+        </form>
+    </section>
     <section class="job-listing">
         {% if jobs %}
             {% for job in jobs %}

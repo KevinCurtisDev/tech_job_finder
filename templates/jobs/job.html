@@ -13,21 +13,24 @@
             <br>
             <p>Date listed: {{job.listed_date}}</p>
             <p>Listed by {{job.recruiter}}</p>
-            <img src="{{ job.recruiter.photo.url }}" alt="">
-            <button>Make enquiry</button>
+            <img class="job-listing__card__img" src="{{ job.recruiter.photo.url }}" alt="">
+            <button class="job-listing__card-btn" id="enquiry">Make enquiry</button>
         </div>
     </section>
 
     <section class="modal">
         <section class="modal-content">
-            <form action="">
-                <input type="text" value="Job: {{ job.title }}">
-                <input type="text" value="{{ job.id }}">
-                <input type="text" value="Name: ">
-                <input type="email" value="Email: ">
-                <input type="text" value="contact date: ">
-                <input type="text" value="message: ">
-                <input type="text" value="User ID: ">
+            <form action="contact" action="POST">
+                {% csrf_token %}
+                <input name="job" type="text" value="Job: {{ job.title }}">
+                <input name="name" type="text"  required value="{{ user.username }}">
+                <input name="email" type="email" required value="{{ user.email }}">
+                <input name="contact_date" type="text" value="contact date: ">
+                <textarea name="message"  required placeholder="Message..."></textarea>
+                <input name="id" type="hidden" value="{{ job.id }}">
+                <input name="user_id" type="hidden" value="{{ user.id }}">
+                <input type="hidden" name="recruiter_email" value="{{ job.recruiter.email }}">
+                <input class="modal-content__btn" type="submit" value="Send enquiry">
             </form>
         </section>
     </section>
