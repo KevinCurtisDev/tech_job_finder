@@ -14,7 +14,22 @@
             <p>Date listed: {{job.listed_date}}</p>
             <p>Listed by {{job.recruiter}}</p>
             <img src="{{ job.recruiter.photo.url }}" alt="">
+            <button>Make enquiry</button>
         </div>
+    </section>
+
+    <section class="modal">
+        <section class="modal-content">
+            <form action="">
+                <input type="text" value="Job: {{ job.title }}">
+                <input type="text" value="{{ job.id }}">
+                <input type="text" value="Name: ">
+                <input type="email" value="Email: ">
+                <input type="text" value="contact date: ">
+                <input type="text" value="message: ">
+                <input type="text" value="User ID: ">
+            </form>
+        </section>
     </section>
 {% endblock %}
 

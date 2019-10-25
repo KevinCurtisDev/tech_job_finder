@@ -4,10 +4,10 @@ from django.contrib.auth.models import User
 
 def login(request):
     if request.method == 'POST':
-        email = request.POST['email']
+        username = request.POST['username']
         password = request.POST['password']
 
-        user = auth.authenticate(email=email, password=password)
+        user = auth.authenticate(username=username, password=password)
 
         if user is not None:
             auth.login(request, user)
@@ -56,7 +56,12 @@ def register(request):
         return render(request, 'accounts/register.html')
 
 def logout(request):
-    return redirect(request, 'index')
+    if request.method == 'POST':
+        auth.logout(request)
+        messages.success(request, 'You logged out')
+
+    return redirect('index')
 
 def dashboard(request):
+
     return render(request, 'accounts/dashboard.html')

@@ -6,7 +6,7 @@
     <form action="{% url 'register' %}" method="POST">
         <!-- Add cs_rf token to prevent cross sight forgery -->
         {% csrf_token %}
-        <input type="text" name="username" required placeholder="Full name...">
+        <input type="text" name="username" required placeholder="User name...">
         <input type="email" name="email" required placeholder="Your email...">
         <input type="password" name="password" required placeholder="Password">
         <input type="password" name="password2" required placeholder="Confirm password">

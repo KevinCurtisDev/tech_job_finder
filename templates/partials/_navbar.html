@@ -6,10 +6,18 @@
         <ul>
             <a href="{% url 'about' %}"><li>About</li></a>
             <a href="{% url 'jobs' %}"><li>Jobs</li></a>
-            <a href="{% url 'login' %}"><li>Log in</li></a>
-            <a href="{% url 'index' %}"><li>Log out</li></a>
-            <a href="{% url 'register' %}"><li class="signup-btn">Sign up</li></a>
-            <a href="#"><li class="donate-btn">Donate</li></a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'dashboard' %}"><li>My Dashboard</li></a>
+                <a href="javascript:{document.getElementById('logout').submit()}"><li>Log out</li></a>
+                <form action="{% url 'logout' %}" id="logout" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden">
+                </form>
+                <a href="#"><li class="donate-btn">Donate</li></a>
+            {% else %}
+                <a href="{% url 'login' %}"><li>Log in</li></a>
+                <a href="{% url 'register' %}"><li class="signup-btn">Sign up</li></a>     
+            {% endif %}
         </ul>
     </div>
 </nav>
