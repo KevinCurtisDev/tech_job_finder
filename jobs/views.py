@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 from django.core.paginator import EmptyPage, Paginator
+from django.contrib.auth.decorators import login_required
 
 from .models import Job
 
@@ -20,7 +21,7 @@ def index(request):
     # return the jobs markup and make available the database job data
     return render(request, 'jobs/jobs.html', context)
 
-
+@login_required
 def job(request, job_id):
     # SEt job variable to return the job data or a 404 if job id does not exist
     job = get_object_or_404(Job, pk=job_id)
@@ -31,7 +32,7 @@ def job(request, job_id):
     # return a dynamically created url for individual job listings
     return render(request, 'jobs/job.html', context)
 
-
+@login_required
 def search(request):
     query = Job.objects.order_by('-listed_date')
 

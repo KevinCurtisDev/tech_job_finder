@@ -1,26 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="hero-img">
-</section>
 {% include 'partials/_message.html' %}
-<h2>Latest Job Posts</h2>
-<section class="job-listing">
-    {% if jobs %}
-    {% for job in jobs %}
-        <div class="job-listing__card">
-            <h3>{{ job.title }}</h3>
-            <br>
-            <p>{{ job.job_type }}</p>
-            <p>Salary: €{{ job.salary }}k</p>
-            <br>
-            <p>{{ job.description }}</p>
-            <br>
-            <p>Date listed: {{job.listed_date}}</p>
-        </div>
-    {% endfor %}
-    {% else %}
-        <p>No jobs listed</p>
-    {% endif %}
+<section class="hero-img">
+    <section class="hero-img_content">
+        <h2>Find your Dream Tech Job</h2>
+        <p>Join the community today</p>
+        <a href="{% url 'register' %}"><li class="signup-btn">Sign up</li></a>  
+    </section>
 </section>
 {% endblock %}

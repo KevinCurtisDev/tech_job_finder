@@ -46,6 +46,7 @@ nav a {
     color: white;
     padding: 5px;
     border-radius: 3px;
+    box-shadow: 1px 1px 10px rgb(66, 66, 66);
 }
 
 .hero-img {
@@ -58,16 +59,23 @@ nav a {
     background-position: center;
 }
 
-.hero-img__search-bar {
+.hero-img_content {
     position: absolute;
-    left: 50%;
+    text-shadow: 1px 1px 10px black;
+    text-align: center;
     top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    width: 300px;
-    max-width: 90%;
-    padding: 3px;
-    font-size: 1.1rem;
-    border-radius: 5px;
+    color: white;
+}
+
+.hero-img_content h2 {
+    font-size: 2.2rem;
+}
+
+.hero-img_content p {
+    font-size: 1.2rem;
+    margin: 5px 0 15px;
 }
 
 .job-listing {

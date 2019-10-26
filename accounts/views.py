@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 def login(request):
     if request.method == 'POST':
@@ -62,6 +63,7 @@ def logout(request):
 
     return redirect('index')
 
+@login_required
 def dashboard(request):
 
     return render(request, 'accounts/dashboard.html')
