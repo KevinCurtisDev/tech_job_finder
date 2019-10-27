@@ -185,6 +185,7 @@ nav a {
     max-width: 90%;
     margin: 0 auto;
     padding: 20px;
+    z-index: 4;
     box-shadow: 1px 1px 10px black;
 }
 
@@ -210,6 +211,14 @@ nav a {
     padding: 10px;
     border-radius: 3px;
     font-size: .9rem;
+}
+
+.close-modal {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: red;
+    font-size: 1.2rem;
 }
 
 /* Register form styling */
