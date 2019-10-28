@@ -1,3 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
+from django.contrib.auth.decorators import login_required
 
-# Create your views here.
+def donation(request):
+    return render(request, 'donations/donation.html')

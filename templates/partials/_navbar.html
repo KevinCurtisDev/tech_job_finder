@@ -13,7 +13,7 @@
                     {% csrf_token %}
                     <input type="hidden">
                 </form>
-                <a href="#"><li class="donate-btn">Donate</li></a>
+                <a href="{% url 'donation' %}"><li class="donate-btn">Donate</li></a>
             {% else %}
                 <a href="{% url 'login' %}"><li>Log in</li></a>
                 <a href="{% url 'register' %}"><li class="signup-btn">Sign up</li></a>     
