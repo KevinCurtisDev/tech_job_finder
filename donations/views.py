@@ -20,7 +20,7 @@ def donation(request):
 def charge(request):
     if request.method == 'POST':
         charge = stripe.Charge.create(
-            amount = 20000,
+            amount = 2000,
             currency = 'eur',
             description = 'Job Finder donation charge',
             source = request.POST['stripeToken']
