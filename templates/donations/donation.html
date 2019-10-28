@@ -2,5 +2,16 @@
 
 {% block content %}
 <h1>Donation page</h1>
+
+<h2>Donate €20</h2>
+<form action="{% url 'charge' %}" method="POST">
+    {% csrf_token %}
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key = "{{ key }}"
+    data-description= "Job Finder donation charge"
+    data-amount="2000"
+    data-locale="auto"
+    ></script>
+</form>
 {% endblock %}
 
