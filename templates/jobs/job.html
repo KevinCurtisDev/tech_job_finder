@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
     {% include 'partials/_message.html' %}
-    <h1>Job</h1>
     <section class="job-listing" id="job-listing">
         <div class="job-listing__card">
             <h3>{{ job.title }}</h3>
@@ -36,5 +35,6 @@
             </form>
         </section>
     </section>
+    <script src="{% static 'js/app.js' %}"></script>
 {% endblock %}
 

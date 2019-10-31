@@ -13,7 +13,7 @@ def login(request):
         if user is not None:
             auth.login(request, user)
             messages.success(request, 'You are logged in')
-            return redirect('dashboard')
+            return redirect('jobs')
         else:
             messages.error(request, 'Invalid email or password')
             return redirect('login')
@@ -62,8 +62,3 @@ def logout(request):
         messages.success(request, 'You logged out')
 
     return redirect('index')
-
-@login_required
-def dashboard(request):
-
-    return render(request, 'accounts/dashboard.html')

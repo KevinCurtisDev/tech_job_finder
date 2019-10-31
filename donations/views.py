@@ -27,4 +27,4 @@ def charge(request):
         )
         
         messages.success(request, 'Thank you for your donation!')
-        return redirect('dashboard')
+        return redirect('jobs')

@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
-
 {% block content %}
-    <h1>Jobs</h1>
+    {% include 'partials/_message.html' %}
     <section class="job-search">
         <form action="{% url 'search' %}">
             <input class="search-bar" type="text" name="keywords" placeholder="Search jobs....">
