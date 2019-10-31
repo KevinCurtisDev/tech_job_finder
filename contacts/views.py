@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import Contact
+from django.core.mail import send_mail
 
 def contact(request):
     if request.method == 'POST':
@@ -22,6 +23,15 @@ def contact(request):
         contact = Contact(job=job, job_id=job_id, name=name, email=email, user_id=user_id, message=message)
 
         contact.save()
+
+        send_mail(
+            'Job Inquiry',
+            'Job '+ job +' inquiry has been made.',
+            'kpcurtis2@gmail.com',
+            [recruiter_email, 'kpcurtis@gmail.com'],
+            fail_silently=False,
+        )
+
 
         messages.success(request, 'Your query has been sent')
         return redirect('/jobs/'+job_id)

@@ -98,6 +98,6 @@ The completed webapp will be deployed to the Digital Ocean hosting platform.
 
 ## Sources
 
-## GDPR concerns and suggestions
+## Future enhancements
 
-In order to limit the information held about users of the webapp and mitigate possible GDPR violation, I suggest limiting information stored in the database to hashed paswords and email addresses. Allowing stripe to take care of the payment transactions will also remove GDPR concerns around storing card details.
+The web app could be further improved by including a candidate profile section and a search feature for companies to look up suitable candidates based on those profiles. There could also be two additional sections including a tech blog and a tech job statistics dashboard showing the most in use skills and programming languages based on geographical location.
