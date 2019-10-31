@@ -30,7 +30,7 @@ As a job seeker, I want to..
 * 
 
 ## Wireframing the UI and app layout
-Balsamiq was used to create wireframes of the UI and app layout, illustrating how the app should look and function across multiple screen sizes and devices. You can view the wireframes at the following link: [wireframe preview](https://github.com/KevinCurtisDev/playschool-application/blob/master/wireframes/wireFrame.pdf)
+Balsamiq was used to create wireframes of the UI and app layout, illustrating how the app should look and function across multiple screen sizes and devices. You can view the wireframes at the following link: [wireframe preview](https://github.com/KevinCurtisDev/tech_job_finder/blob/master/wireframes/techjobfinder.pdf)
 
 The display will look the same on both desktop and tablet sized screens.
 
