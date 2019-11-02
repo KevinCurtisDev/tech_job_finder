@@ -5,8 +5,12 @@
 <section class="hero-img">
     <section class="hero-img_content">
         <h2>Find your Dream Tech Job</h2>
-        <p>Join the community today</p>
-        <a href="{% url 'register' %}"><li class="signup-btn">Sign up</li></a>  
+
+        <!-- Include a sign up button and text if the user isn't signed in -->
+        {% if not user.is_authenticated %}
+            <p>Join the community today</p>
+            <a class="signup-btn" href="{% url 'register' %}">Sign up</a>  
+        {% endif %}
     </section>
 </section>
 {% endblock %}

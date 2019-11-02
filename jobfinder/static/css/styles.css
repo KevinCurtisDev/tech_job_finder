@@ -9,24 +9,90 @@ a {
 }
 
 nav {
-    display: flex;
-    width: 100%;
-    background-color: rgb(60, 99, 68);
-    color: white;
     padding: 20px;
+    display: flex;
+    box-shadow: 1px 1px 5px #999999;
+    width: 100%;
+    background: #145728;
+    z-index: 6;
 }
-
-.nav-brand, .nav-links {
-    width: 50%;
+  
+.brand {
+    display: flex;
+    width: 95%;
 }
-
+  
+.brand-initials {
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 1px;
+    font-size: 2.2rem;
+    text-align: center;
+    width: 64px;
+}
+  
+.brand-text {
+    margin-left: 10px;
+    margin-top: 20px;
+    font-size: 1.3rem;
+    color: #e6e6e6;
+}
+  
+.hamburger-menu {
+    width: 50px;
+    height: 40px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+  
+.line {
+    width : 100%;
+    height: 3px;
+    border: 1px solid #fff;
+    margin-bottom: 10px;
+    background-color: #e6e6e6;
+}
+  
+input:checked ~ .menu {
+    transform: translateX(0);
+    opacity: 1;
+}
+  
+.navigation {
+    width: 100vw;
+    background-color: #1a1a1a;
+    padding: 10px;
+}
+  
+ul {
+    list-style: none;
+}
+  
 li {
-    display: inline-block;
-    margin: 0 10px;
-    list-style-type: none;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+  
+#menu {
+    position: absolute;
+    left: -9999px;
+}
+  
+.menu {
+    transform: translateX(100%);
+    transition: all .5s ease-out;
+    background-color: #3b7040;
+    color: #fff;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    padding-top: 180px;
+    z-index: 1;
+    opacity: .8;
+    position: fixed;
 }
 
-nav a {
+.menu a {
     color: white;
 }
 
@@ -48,6 +114,7 @@ nav a {
     padding: 5px;
     border-radius: 3px;
     box-shadow: 1px 1px 10px rgb(66, 66, 66);
+    display: inline-block;
 }
 
 .hero-img {
@@ -110,6 +177,7 @@ nav a {
 .job-listing__card__img {
     width: 150px;
     height: auto;
+    margin: 10px 0;
 }
 
 .job-listing__card a {
@@ -123,6 +191,8 @@ nav a {
     color: white;
     padding: 5px;
     width: 150px;
+    border: none;
+    cursor: pointer;
     border-radius: 3px;
     font-size: .9rem;
 }
@@ -144,6 +214,11 @@ nav a {
     transform: translate(-50%);
 }
 
+.pagination li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
 .pagination a {
     color: rgb(1, 36, 1);
 }
@@ -155,6 +230,7 @@ nav a {
     background-color: white;
     border: 1px solid gray;
     border-radius: 3px;
+    font-size: 1rem;
 }
 
 .active {
@@ -300,3 +376,12 @@ footer {
         display: none;
     }
 }
+
+
+/************** Media queries *************/
+  
+  @media only screen and (min-width: 720px) {
+    nav {
+      padding: 20px 60px;
+    }
+  }

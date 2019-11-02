@@ -12,13 +12,9 @@
                 <div class="job-listing__card">
                     <h3>{{ job.title }}</h3>
                     <br>
-                    <p>{{ job.job_type }}</p>
-                    <p>Salary: €{{ job.salary }}k</p>
-                    <br>
                     <p>{{ job.description }}</p>
                     <br>
                     <p>Date listed: {{job.listed_date}}</p>
-                    <p>Listed by {{job.recruiter}}</p>
                     <br>
                     <a href="{% url 'job' job.id %}" class="job-listing__card-btn">View details</a>
                 </div>
@@ -32,7 +28,9 @@
             {% if jobs.has_other_pages %}
                 <ul>
                     {% if jobs.has_previous %}
-                        <a href="?page={{jobs.previous_page_number}}">&laquo;</a>
+                        <li>
+                            <a href="?page={{jobs.previous_page_number}}">&laquo;</a>
+                        </li>
                     {% else %}
                         <li>
                             <a>&laquo;</a>
@@ -50,7 +48,9 @@
                         {% endif %}
                     {% endfor %}
                     {% if jobs.has_next %}
-                    <a href="?page={{jobs.next_page_number}}">&raquo;</a>
+                        <li>
+                            <a href="?page={{jobs.next_page_number}}">&raquo;</a>
+                        </li>
                     {% else %}
                         <li>
                             <a>&raquo;</a>
