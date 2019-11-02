@@ -6,6 +6,7 @@
             <input class="search-bar" type="text" name="keywords" placeholder="Search jobs....">
         </form>
     </section>
+    <!-- Display job listings only if there are any in the database -->
     <section class="job-listing">
         {% if jobs %}
             {% for job in jobs %}
@@ -24,6 +25,7 @@
         {% endif %}
     </section>
     <section class="pagination-wrapper">
+        <!-- pagination logic -->
         <section class="pagination">
             {% if jobs.has_other_pages %}
                 <ul>

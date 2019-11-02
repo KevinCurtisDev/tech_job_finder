@@ -2,16 +2,21 @@
 
 {% block content %}
     {% include 'partials/_message.html' %}
-    <h1>Register</h1>
-    <section class="form">
-        <form action="{% url 'register' %}" method="POST">
-            <!-- Add cs_rf token to prevent cross sight forgery -->
-            {% csrf_token %}
-            <input type="text" name="username" required placeholder="User name...">
-            <input type="email" name="email" required placeholder="Your email...">
-            <input type="password" name="password" required placeholder="Password">
-            <input type="password" name="password2" required placeholder="Confirm password">
-            <input type="submit" value="Register"  class="form-btn">
-        </form>
+    <section class="main-space">
+    </section>
+    <section class="modal-open">
+        <section class="modal-content">
+            <h1>Register</h1>
+            <a href="{% url 'index' %}" class="close-modal">×</a>
+            <form action="{% url 'register' %}" method="POST">
+                <!-- Add cs_rf token to prevent cross sight forgery -->
+                {% csrf_token %}
+                <input type="text" name="username" required placeholder="User name...">
+                <input type="email" name="email" required placeholder="Your email...">
+                <input type="password" name="password" required placeholder="Password">
+                <input type="password" name="password2" required placeholder="Confirm password">
+                <input type="submit" value="Register"  class="form-btn">
+            </form>
+        </section>
     </section>
 {% endblock %}

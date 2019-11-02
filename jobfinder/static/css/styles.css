@@ -8,6 +8,9 @@ a {
     text-decoration: none;
 }
 
+
+/*************** Navigation syling *************/
+
 nav {
     padding: 20px;
     display: flex;
@@ -117,6 +120,10 @@ li {
     display: inline-block;
 }
 
+/***************************************/
+
+/************* hero image ***********/
+
 .hero-img {
     position: relative;
     width: 100%;
@@ -146,6 +153,15 @@ li {
     margin: 5px 0 15px;
 }
 
+.main-space {
+    height: 80vh;
+    width: 100%;
+}
+
+/***************************************/
+
+
+/************* Search styling ************/
 
 .job-search {
     max-width: 90%;
@@ -157,6 +173,11 @@ li {
     width: 100%;
     padding: 5px;
 }
+
+/***************************************/
+
+
+/************ Job listing slying **********/
 
 .job-listing {
     max-width: 100%;
@@ -196,6 +217,11 @@ li {
     border-radius: 3px;
     font-size: .9rem;
 }
+
+/***************************************/
+
+
+/*********** pagination styling **********/
 
 .pagination-wrapper {
     position: relative;
@@ -237,23 +263,10 @@ li {
     background: rgb(159, 252, 159);
 }
 
-.message {
-    position: absolute;
-    text-align: center;
-    width: 400px;
-    max-width: 90%;
-    padding: 20px;
-    margin-top: -50px;
-    margin-left: 50%;
-    transform: translate(-50%);
-    animation: slidedown 3s linear forwards; 
-    color: white;
-    background-color: rgb(82, 82, 82);
-    z-index: 5;
-}
+/***************************************/
 
 
-/* Modal styles */
+/************ Modal styles **********/
 
 .modal {
     display: flex;
@@ -264,6 +277,18 @@ li {
     bottom: 0;
     right: 0;
     display: none;
+    z-index: 2;
+    background-color: rgba(37, 37, 37, .8);
+}
+
+.modal-open {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     z-index: 2;
     background-color: rgba(37, 37, 37, .8);
 }
@@ -315,15 +340,26 @@ li {
     font-size: 2rem;
 }
 
-/* Register form styling */
+/***************************************/
+
+
+/************* Form styling **********/
 
 .form {
-    background-color: rgb(245, 243, 243);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
     width: 400px;
     max-width: 90%;
     margin: 0 auto;
     padding: 20px;
-    box-shadow: 1px 1px 10px black;
+}
+
+.form h1 {
+    text-align: center;
+    color: rgba(56, 55, 55, 0.61);
 }
 
 .form input {
@@ -342,8 +378,25 @@ li {
     font-size: .9rem;
 }
 
+/***************************************/
 
-/* Message styling */
+
+/************ Message styling **********/
+
+.message {
+    position: absolute;
+    text-align: center;
+    width: 400px;
+    max-width: 90%;
+    padding: 20px;
+    margin-top: -50px;
+    margin-left: 50%;
+    transform: translate(-50%);
+    animation: slidedown 3s linear forwards; 
+    color: white;
+    background-color: rgb(82, 82, 82);
+    z-index: 5;
+}
 
 .error {
     background-color: rgb(190, 14, 14);
@@ -353,6 +406,10 @@ li {
     background-color: rgb(26, 124, 26);
 }
 
+/****************************************/
+
+
+/*********** footer styling ***************/
 footer {
     width: 100%;
     text-align: center;
@@ -360,6 +417,8 @@ footer {
     background-color: rgb(2, 27, 2);
     color: rgb(243, 242, 242);
 }
+
+/********************************************/
 
 
 @keyframes slidedown {

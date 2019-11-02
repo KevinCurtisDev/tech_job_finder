@@ -7,6 +7,7 @@
             <div>Tech Job Finder</div>
         </div>
     </div>
+    <!-- nested hamburger menu inside label tag in order to use css checkbox to control menu state -->
     <label for="menu">
         <div class="hamburger-menu">
             <div class="line"></div>
@@ -19,6 +20,7 @@
 <input type="checkbox" id="menu">
 <div class="menu">
     <ul>
+        <!-- Menu logic displaying links related to logged in or logged out state -->
         <a href="{% url 'about' %}"><li>About</li></a>
         {% if user.is_authenticated %}
             <a href="{% url 'jobs' %}"><li>Jobs</li></a>
