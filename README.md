@@ -5,6 +5,9 @@
 ## Summary
 Tech Job Finder is a web application built with the django framework. The webApp allows users to securely sign up/in. Once signed in the user is taken to a personalised dashboard with records of interactions he/she has had with recruiters about job postings. The user is also able to look through job listings, check job details, apply to the recruiter who posted the listng, and offer a donation for use of the service.
 
+## Features
+Custom styled admin area. Admin log in. Super user view, add, edit, delete operations on jobs and recruiters from the admin area. General user login/sign up area. Job listing board. Individual job detail area - showing associated recruiter. Job enquiry area. Email notification for recruiters (notifying when an enquiry has been made for a specific job posting). Donation page using stripe to make a secure payment. Responsively designed to work accross multiple sized devices. Custom built slide in menu using pure css (checkbox hack). Conditionally rendered elements and pages dependingon whether a user is logged in or not.
+
 ## User experience
 The user experience for the Tech job finder app has been designed around use cases for the following users:
 
@@ -90,7 +93,9 @@ Jinja templating hase been implemented in structuring the html layout. Each page
 
 #### Chrome Lighthouse Audit
 
-* Run all lighthouse audit checks and update with suggested improvements
+Google chrome's lighthouse audit was run on the site and returned the following results. Accessibility will be addressed when reviewing the code base. Making the site a pwa will also be considered upon review. All other results returned a higher than average score.
+
+<img src="https://github.com/KevinCurtisDev/tech_job_finder/blob/master/jobfinder/static/images/lighthouseaudit.png" style="width: 100%; height: auto;">
 
 ### Testing outcomes
 
