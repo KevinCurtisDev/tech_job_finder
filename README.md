@@ -1,6 +1,6 @@
 # Tech Job Finder
 
-<img src="" style="width: 100%; height: auto;">
+<img src="https://github.com/KevinCurtisDev/tech_job_finder/blob/master/jobfinder/static/images/techjobfinder.png" style="width: 100%; height: auto;">
 
 ## Summary
 Tech Job Finder is a web application built with the django framework. The webApp allows users to securely sign up/in. Once signed in the user is taken to a personalised dashboard with records of interactions he/she has had with recruiters about job postings. The user is also able to look through job listings, check job details, apply to the recruiter who posted the listng, and offer a donation for use of the service.
