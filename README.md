@@ -16,12 +16,12 @@ The user experience for the Tech job finder app has been designed around use cas
 The following user stories were used to guide the development of the UI and the database structure.
 
 Site administrator
-As an administrator, I want to..
+As an administrator, I want to log in to the backend admin area. Add, remove or edit jobs, add, remove or edit recruiters and recruiter details, link specific jobs toindividual recruiters, view or delete enquiries.
 
 * 
 
-Recruiter
-As a recruiter, I want to..
+Recruiter:
+As a recruiter, I want to log in to the backend admin area. View job enquiry details and details of the sender of the enquiry.
 
 * 
 
@@ -78,11 +78,15 @@ Jinja templating hase been implemented in structuring the html layout. Each page
 
 #### Logic 
 
+* Conditionally show specific links in nav bar
 * Conditionally show specific pages when logged in
 * Allow specific actions for regular users
 * Allow specific actions for super user
 * Do all backend and frontend form validation checks work?
-* Can I make a payment when loggin in, do I get notified if the payment worked or not?
+* Can I make a payment when logged in, do I get notified if the payment worked or not?
+* Can I message the recruiter responsible for post a job
+* As a recruiter, do I get notified/emailed about new enquiries?
+* As a super user can I add/remove content /users
 
 #### Chrome Lighthouse Audit
 
@@ -90,9 +94,57 @@ Jinja templating hase been implemented in structuring the html layout. Each page
 
 ### Testing outcomes
 
+#### Unregistered users 
+* can sign up or view the about page.
+* can not log in.
+* can not sign up with a user name or email address already registered.
+* are shown error messages in the browser to warn about sign up information.
+
+#### Registered users
+* can sign in.
+* can view job listing once signed in.
+* can view individual job details once signed in.
+* can make enquiries about specific jobs to the job poster once signed in.
+* can make a donation once signed in.
+* can sign out once signed in.
+
+#### Super user
+* can sign into the backend admin area.
+* can add new job listings and associate them with a specific recruiter.
+* can delete job postings.
+* can add or delete recruiters.
+* can view enquiries sent to individual recruiters.
+
+#### Recruiter
+* can sign in to the backend admin area.
+* recieves email notifications to their personal email notifying them of enquiries.
+* can view enquiries.
+
 ## Deployment
 
+### Live website
 The completed webapp will be deployed to the Digital Ocean hosting platform. 
+
+### Running on a local machine
+
+## Code sample
+
+The following snippet shows a Job class used to create job entries in the postgresql database:
+
+```python
+class Job(models.Model):
+    #Create database fields for individual jobs
+    recruiter = models.ForeignKey(Recruiter, on_delete=models.DO_NOTHING)
+    title = models.CharField(max_length=200)
+    location = models.CharField(max_length=200)
+    job_type = models.CharField(max_length=200)
+    description = models.TextField(max_length=800)
+    salary = models.IntegerField()
+    listed_date = models.DateTimeField(default=datetime.now, blank=True)
+    def __str__(self):
+        return self.title
+```
+
 
 ## Difficulties
 
