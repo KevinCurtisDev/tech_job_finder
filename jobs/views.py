@@ -8,7 +8,7 @@ def index(request):
     # set job variable to hold job info from database (ordered by date)
     jobs = Job.objects.order_by('-listed_date')
 
-    # set nuber of jobs to be listed per page 
+    # set number of jobs to be listed per page 
     paginator = Paginator(jobs, 2)
     page = request.GET.get('page')
     paged_jobs = paginator.get_page(page)
@@ -23,7 +23,7 @@ def index(request):
 
 @login_required
 def job(request, job_id):
-    # SEt job variable to return the job data or a 404 if job id does not exist
+    # Set job variable to return the job data or a 404 if job id does not exist
     job = get_object_or_404(Job, pk=job_id)
 
     context = {

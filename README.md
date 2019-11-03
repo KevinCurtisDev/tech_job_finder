@@ -6,31 +6,32 @@
 Tech Job Finder is a web application built with the django framework. The webApp allows users to securely sign up/in. Once signed in the user is taken to a personalised dashboard with records of interactions he/she has had with recruiters about job postings. The user is also able to look through job listings, check job details, apply to the recruiter who posted the listng, and offer a donation for use of the service.
 
 ## Features
-Custom styled admin area. Admin log in. Super user view, add, edit, delete operations on jobs and recruiters from the admin area. General user login/sign up area. Job listing board. Individual job detail area - showing associated recruiter. Job enquiry area. Email notification for recruiters (notifying when an enquiry has been made for a specific job posting). Donation page using stripe to make a secure payment. Responsively designed to work accross multiple sized devices. Custom built slide in menu using pure css (checkbox hack). Conditionally rendered elements and pages dependingon whether a user is logged in or not.
+Custom styled admin area. Admin log in. Super user view, add, edit, delete operations on jobs and recruiters from the admin area. General user login/sign up area. Job listing board. Individual job detail area - showing associated recruiter. Job enquiry area. Email notification for recruiters (notifying when an enquiry has been made for a specific job posting). Donation page using stripe to make a secure payment. Responsively designed to work accross multiple sized devices. Custom built slide in menu using pure css (checkbox hack). Conditionally rendered elements and pages depending on whether a user is logged in or not. Pop up success/error notifications offering a better user experience with instant feedback.
 
 ## User experience
 The user experience for the Tech job finder app has been designed around use cases for the following users:
 
 * System administrator
 * Recruiter
-* Job seeker
+* Tech Job seeker
 
 ### User stories
 The following user stories were used to guide the development of the UI and the database structure.
 
-Site administrator
+#### Site administrator:
 As an administrator, I want to log in to the backend admin area. Add, remove or edit jobs, add, remove or edit recruiters and recruiter details, link specific jobs toindividual recruiters, view or delete enquiries.
 
-* 
+Actions taken:
 
-Recruiter:
+#### Recruiter:
 As a recruiter, I want to log in to the backend admin area. View job enquiry details and details of the sender of the enquiry.
 
-* 
+Actions taken:
 
-As a job seeker, I want to..
+#### Tech job seeker
 
-* 
+
+Actions taken:
 
 ## Wireframing the UI and app layout
 Balsamiq was used to create wireframes of the UI and app layout, illustrating how the app should look and function across multiple screen sizes and devices. You can view the wireframes at the following link: [wireframe preview](https://github.com/KevinCurtisDev/tech_job_finder/blob/master/wireframes/techjobfinder.pdf)
@@ -39,22 +40,23 @@ The display will look the same on both desktop and tablet sized screens.
 
 ## Technologies
 
-* Django framework (python programming language)
-* PostgreSQL (database)
+* [Django framework](https://docs.djangoproject.com/en/2.2/) (python programming language)
+* [PostgreSQL](https://www.postgresql.org) (database)
 * JavaScript (frontend interaction)
 * HTML5 & CSS3 (layout and styling)
-* Stripe API (for processing payments)
-* Balsamiq (wireframing during design phase)
-* Digital Ocean (hosting)
+* [Stripe API](https://stripe.com/ie) (for processing payments)
+* [Balsamiq](https://balsamiq.com/) (wireframing during design phase)
+* [Digital Ocean](https://www.digitalocean.com/) (hosting)
 
 ## Site architecture
+Django applications are made up of multiple self contained applications that interact with each other. The views that render on a user's device are generated from html templates, which contain blocks of python code, injected by jinja.
 
 ### Apps
 
-* Pages - Generates views for the index, message board, and resources pages
-* Donations - Generates a class based payement page, which redirects to a Charged page on payment completion.
+* Pages - Generates views for the index and about pages.
+* Donations - Generates a payement page, which redirects to the job listing page (with a success message po up) on payment completion.
 * Contacts - 
-* Jobs -
+* Jobs -Generates a view for the job listing section and individul job listing/query.
 * Recruiters - 
 * Accounts - Generates the user login and register views, and validates user credentials.
 
@@ -91,13 +93,14 @@ Jinja templating hase been implemented in structuring the html layout. Each page
 * As a recruiter, do I get notified/emailed about new enquiries?
 * As a super user can I add/remove content /users
 
+
+### Testing outcomes
+
 #### Chrome Lighthouse Audit
 
 Google chrome's lighthouse audit was run on the site and returned the following results. Accessibility will be addressed when reviewing the code base. Making the site a pwa will also be considered upon review. All other results returned a higher than average score.
 
 <img src="https://github.com/KevinCurtisDev/tech_job_finder/blob/master/jobfinder/static/images/lighthouseaudit.png" style="width: 100%; height: auto;">
-
-### Testing outcomes
 
 #### Unregistered users 
 * can sign up or view the about page.
@@ -153,7 +156,17 @@ class Job(models.Model):
 
 ## Difficulties
 
+### Email
+Setting up gmail SMPT in order to send messages required a bit of playing around with email settings.
+
+### UI (User interface)
+Figuring out the best way to handle the UI of a web app like this was a challenge and an area I will revisit after some further study. While the UI flows quite well, it can at times be difficult to tell how potential users will interact with it. I feel further testing is needed with a larger demographic of tech job hunters and recruiters.
+
+### Database
+FIguring out the database schema was initially a difficult process, as I found myself adding and removing features as I built the web app, which meant changing the database structure a number of times. In the end, I went with a simple setup inspired by Brad Traversy (Traversy Media).
+
 ## Sources
+All images were taken from unsplash.com.
 
 ## Future enhancements
 
