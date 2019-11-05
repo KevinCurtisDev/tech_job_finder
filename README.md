@@ -30,24 +30,35 @@ The user experience for the Tech job finder app has been designed around use cas
 The following user stories were used to guide the development of the UI and the database structure.
 
 #### Site administrator:
-As an administrator, I want to log in to the backend admin area. Add, remove or edit jobs, add, remove or edit recruiters and recruiter details, link specific jobs toindividual recruiters, view or delete enquiries.
+As an administrator, I want to -
+* log in to the backend admin area. 
+* add, remove or edit jobs, add, remove or edit recruiters and recruiter details.
+* link specific jobs toindividual recruiters, view or delete enquiries.
 
-Actions taken:
 
 #### Recruiter:
-As a recruiter, I want to log in to the backend admin area. View job enquiry details and details of the sender of the enquiry.
-
-Actions taken:
+As a recruiter, I want to - 
+* log in to the backend admin area. 
+* View job enquiry details and details of the sender of the enquiry.
 
 #### Tech job seeker
+As a job seeker, I want to -
+* get information about the platform.
+* sign up.
+* sing in.
+* see current job listings.
+* search jobs.
+* see specific job details.
+* make a job enquiry.
+* log out.
 
-
-Actions taken:
-
-## Wireframing the UI and app layout
+## Wireframing, layout, & style choice
 Balsamiq was used to create wireframes of the UI and app layout, illustrating how the app should look and function across multiple screen sizes and devices. You can view the wireframes at the following link: [wireframe preview](https://github.com/KevinCurtisDev/tech_job_finder/blob/master/wireframes/techjobfinder.pdf)
 
 The display will look the same on both desktop and tablet sized screens.
+
+* Font used: Lato (from google fonts) was used as it projects a clean corporate look.
+* Colour palette: Used a monochrome colour palette, with dark green as the base colour in order to invoke a sense of balance and trust.
 
 ## Technologies
 
@@ -87,7 +98,61 @@ See details of manual tests carried out here: [Tests](https://github.com/KevinCu
 ### Live website
 The completed webapp will be deployed to the Digital Ocean hosting platform. 
 
+#### deployment steps
+1. 
+2. 
+3. 
+4. 
+
 ### Running on a local machine
+
+1. Clone or download the project (green clone button is located at the top right of this page). Altenatively, on your pc, ope the terminal/command line and cd into the location you want to clone the project too, then run the following command:
+```cmd 
+git clone https://github.com/KevinCurtisDev/tech_job_finder
+```
+
+2. Create a virtual environment. 
+
+    * To do this on  a mac, cd into the root directory of the project, then run the command: 
+    ```cmd
+    python -m venv ./venv 
+    ```
+    * To do this on  a windows machine, cd into the root directory of the project, then run the command: 
+    ```cmd
+    py -m venv ./venv
+    ```
+
+3. Install project dependencies: 
+```cmd
+pip install -r requirements.txt
+```
+4. Create a secrets.py file. 
+5. Register with stripe.com and get the appropriate keys. Add your keys to the secrets.py file.
+6. You need to have PostgresQL running on your machine. Once it is running, configure the connection with your user name and password in the secrets.py file.
+7. Run migrations: 
+    * mac-
+    ```cmd
+    python manage.py runmigrations
+    python manage.py migrate
+    ```
+    * windows
+    ```cmd
+    py manage.py runmigrations
+    py manage.py migrate
+    ```
+8. Generate a super user:
+    * mac-
+    ```cmd
+    python manage.py createsuperuser
+    ```
+    * windows
+    ```cmd
+    py manage.py createsuperuser
+    ```
+9. Log in to the admin area with your super user credentials at : 127.0.0.1:8000/admin
+10. Add recruiter profiles. Add jobs and associate them to individual recruiters.
+
+
 
 ## Code sample
 
@@ -117,7 +182,7 @@ Setting up gmail SMPT in order to send messages required a bit of playing around
 Figuring out the best way to handle the UI of a web app like this was a challenge and an area I will revisit after some further study. While the UI flows quite well, it can at times be difficult to tell how potential users will interact with it. I feel further testing is needed with a larger demographic of tech job hunters and recruiters.
 
 ### Database
-FIguring out the database schema was initially a difficult process, as I found myself adding and removing features as I built the web app, which meant changing the database structure a number of times. In the end, I went with a simple setup inspired by Brad Traversy (Traversy Media).
+Figuring out the database schema was initially a difficult process, as I found myself adding and removing features as I built the web app, which meant changing the database structure a number of times. In the end, I went with a simple setup inspired by Brad Traversy (Traversy Media).
 
 ## Sources
 All images were taken from unsplash.com.
