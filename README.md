@@ -20,7 +20,7 @@ Tech Job Finder is a web application built with the django framework. The webApp
 * Pagination is used for displaying a limited number of jobs per page.
 
 ## User experience
-The user experience for the Tech job finder app has been designed around use cases for the following users:
+The user experience was designed to be simple and to the point, with the intention of minimising the frustrations of the job seeker. The user experience has been fromed around use cases for the following users - with the main focus being the job seeker, thus taking a user centric approach to development:
 
 * System administrator
 * Recruiter
@@ -77,9 +77,9 @@ Django applications are made up of multiple self contained applications that int
 
 * Pages - Generates views for the index and about pages.
 * Donations - Generates a payement page, which redirects to the job listing page (with a success message po up) on payment completion.
-* Contacts - 
-* Jobs -Generates a view for the job listing section and individul job listing/query.
-* Recruiters - 
+* Contacts - Generates a model for job enquiries to be sent to recruiters.
+* Jobs - Generates a view for the job listing section and individul job listing/query.
+* Recruiters - Generates model for recruters in the database.
 * Accounts - Generates the user login and register views, and validates user credentials.
 
 ### HTML Template structure
@@ -87,7 +87,35 @@ Django applications are made up of multiple self contained applications that int
 Jinja templating hase been implemented in structuring the html layout. Each page extends a base html page that includes elements common to all pages. The common elements have been further abstracted away by building them as smaller (partial) html components. Conditional statements in the jinja templates account for what is displayed in the header section based on whether the user is logged in or out.
 
 ### Database design
+Database design used the following classes and attributes:
+* Job
+    * id (PK)
+    * title
+    * location
+    * type
+    * description
+    * salary
+    * lised date
+    * added
+    * recruiter id (FK)
+* Recruiter
+    * id (PK)
+    * name
+    * photo
+    * bio
+    * email
+    * phone
+* Contacts
+    * id(PK)
+    * Job
+    * job_id(FK)
+    * name
+    * email
+    * message
+    * contact_date
+    * user_id(FK)
 
+Django provides a auth_user class, and django_admin class, in order to handle permissions.
 
 ## Testing
 
