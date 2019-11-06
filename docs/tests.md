@@ -33,7 +33,7 @@
 
 Google chrome's lighthouse audit was run on the site and returned the following results. Accessibility will be addressed when reviewing the code base. Making the site a pwa will also be considered upon review. All other results returned a higher than average score.
 
-<img src="https://github.com/KevinCurtisDev/tech_job_finder/blob/master/jobfinder/static/images/lighthouseaudit.png" style="width: 100%; height: auto;">
+<img src="https://github.com/KevinCurtisDev/tech_job_finder/blob/master/docs/images/lighthouseaudit.png" style="width: 100%; height: auto;">
 
 ### Manual testing outcomes
 Manual testing was carried out for each type of user. The following user flows were confirmed.

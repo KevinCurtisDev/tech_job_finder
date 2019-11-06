@@ -161,6 +161,19 @@ li {
 
 /***************************************/
 
+/**************** About *****************/
+
+.main-content {
+    min-height: 80vh;
+    padding: 20px;
+    max-width: 100%;
+    width: 800px;
+    margin: 20px auto;
+}
+
+.main-content h1 {
+    margin-bottom: 20px;
+}
 
 /************* Search styling ************/
 

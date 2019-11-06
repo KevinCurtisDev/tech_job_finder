@@ -86,6 +86,11 @@ Django applications are made up of multiple self contained applications that int
 
 Jinja templating hase been implemented in structuring the html layout. Each page extends a base html page that includes elements common to all pages. The common elements have been further abstracted away by building them as smaller (partial) html components. Conditional statements in the jinja templates account for what is displayed in the header section based on whether the user is logged in or out.
 
+In terms of structuring the html, there is a base.html file which holds the primary elements and links that are common to all pages throughout the application. There are also partial html files (header and footer) that are common to each page. These partials are included in the base.html file. Each page in the app then extends from the base.html, including its own, unique, content between block tags:
+```jinja 
+{% block contentent %}
+```
+
 ### Database design
 Database design used the following classes and attributes:
 * Job
@@ -127,10 +132,22 @@ See details of manual tests carried out here: [Tests](https://github.com/KevinCu
 The completed webapp will be deployed to the Digital Ocean hosting platform. 
 
 #### deployment steps
-1. 
-2. 
-3. 
-4. 
+1. Sign in to digital ocean and create a droplet (Ubuntu instance)
+2. Set up droplet with ssh key.
+3. Click create droplet.
+4. Install server dependencies:
+```cmd
+sudo apt install python3-pip python3-dev libpq-dev postgresql postgresql-contrib nginx curl
+```
+5. Set up the postgresql database.
+6. Create a database user and grant all priveleges (as in the digital ocean docs).
+7. Install a virtual environment on the ubuntu machine:
+```cmd
+sudo apt install python3-venv
+```
+8. Create and activate a virtual environment in the root directory.
+9. 
+
 
 ### Running on a local machine
 
@@ -138,7 +155,6 @@ The completed webapp will be deployed to the Digital Ocean hosting platform.
 ```cmd 
 git clone https://github.com/KevinCurtisDev/tech_job_finder
 ```
-
 2. Create a virtual environment. 
 
     * To do this on  a mac, cd into the root directory of the project, then run the command: 
