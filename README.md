@@ -146,7 +146,14 @@ sudo apt install python3-pip python3-dev libpq-dev postgresql postgresql-contrib
 sudo apt install python3-venv
 ```
 8. Create and activate a virtual environment in the root directory.
-9. 
+9. Clone the project from github:
+```cmd
+git clone https://github.com/KevinCurtisDev/tech_job_finder.git
+```
+10. Install dependencies:
+```cmd
+pip install -r requirements.txt
+```
 
 
 ### Running on a local machine
