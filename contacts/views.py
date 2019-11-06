@@ -24,13 +24,14 @@ def contact(request):
 
         contact.save()
 
-        send_mail(
-            'Job Inquiry',
-            'Job '+ job +' inquiry has been made.',
-            'kpcurtis2@gmail.com',
-            [recruiter_email, 'kpcurtis@gmail.com'],
-            fail_silently=False,
-        )
+        # email sending can be enabled by uncommenting the code below
+        # send_mail(
+        #     'Job Inquiry',
+        #     'Job '+ job +' inquiry has been made.',
+        #     'kpcurtis2@gmail.com',
+        #     [recruiter_email, 'kpcurtis@gmail.com'],
+        #     fail_silently=False,
+        # )
 
 
         messages.success(request, 'Your query has been sent')

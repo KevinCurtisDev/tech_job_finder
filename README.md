@@ -5,6 +5,8 @@
 ## Summary
 Tech Job Finder is a web application built with the django framework. The webApp allows users to securely sign up/in. Once signed in the user is taken to a job listings page, where he/she can look through job listings, check job details, apply to the recruiter who posted the listng, and offer a donation for use of the service.
 
+See the live production site at: [Tech Job Finder](http://178.128.166.217/)
+
 ## Features
 * Custom styled admin area. 
 * Admin log in. 
@@ -154,6 +156,7 @@ git clone https://github.com/KevinCurtisDev/tech_job_finder.git
 ```cmd
 pip install -r requirements.txt
 ```
+11. Set up gunicorn and nginx on the server (ref: digital ocean docs)
 
 
 ### Running on a local machine
@@ -240,4 +243,4 @@ All images were taken from unsplash.com.
 
 ## Future enhancements
 
-The web app could be further improved by including a candidate profile section and a search feature for companies to look up suitable candidates based on those profiles. There could also be two additional sections including a tech blog and a tech job statistics dashboard showing the most in use skills and programming languages based on geographical location.
+The web app could be further improved by including a candidate profile section and a search feature for companies to look up suitable candidates based on those profiles. There could also be two additional sections including a tech blog and a tech job statistics dashboard showing the most in use skills and programming languages based on geographical location. Adding an SSL certificate to the site is an essential next step for live web hosting.
