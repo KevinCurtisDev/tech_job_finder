@@ -182,7 +182,7 @@ pip install -r requirements.txt
 ```
 4. Create a secrets.py file. 
 5. Register with stripe.com and get the appropriate keys. Add your keys to the secrets.py file.
-6. You need to have PostgresQL running on your machine. Once it is running, configure the connection with your user name and password in the secrets.py file.
+6. You need to have PostgresQL running on your machine. Once it is running, configure the connection with your user name and password in the settings.py file.
 7. Run migrations: 
     * mac-
     ```cmd
@@ -230,7 +230,7 @@ class Job(models.Model):
 ## Difficulties
 
 ### Email
-Setting up gmail SMPT in order to send messages required a bit of playing around with email settings.
+Setting up gmail SMPT in order to send messages required a bit of playing around with email settings. Because the site is not using ssl encrytion, when an email is sent it returns a server error 500 on the live production site. THe messages do however stll go through to the admin area for recruiters to view.
 
 ### UI (User interface)
 Figuring out the best way to handle the UI of a web app like this was a challenge and an area I will revisit after some further study. While the UI flows quite well, it can at times be difficult to tell how potential users will interact with it. I feel further testing is needed with a larger demographic of tech job hunters and recruiters.
