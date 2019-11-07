@@ -3,6 +3,7 @@ from datetime import datetime
 
 
 class Contact(models.Model):
+    #Create the contacts class, storing submitted information for database entry
     job = models.CharField(max_length=200)
     job_id = models.IntegerField()
     name = models.CharField(max_length=200)

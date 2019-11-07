@@ -3,6 +3,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+#set up the urls for all associated apps within the project
 urlpatterns = [
     path('', include('pages.urls')),
     path('accounts/', include('accounts.urls')),

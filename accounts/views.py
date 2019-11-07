@@ -4,20 +4,27 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
 def login(request):
+    #Authenticate a user's password and user name in order to sign in
     if request.method == 'POST':
+        #send post request
         username = request.POST['username']
         password = request.POST['password']
 
+        #set user variable
         user = auth.authenticate(username=username, password=password)
 
         if user is not None:
+            #if the user exists in the database and the name and password matches
+            #log user in and redirect them to the job listings, display a success message
             auth.login(request, user)
             messages.success(request, 'You are logged in')
             return redirect('jobs')
         else:
+            #Otherwise display an error message and redirect to the login page
             messages.error(request, 'Invalid email or password')
             return redirect('login')
     else:
+        #if the user doesn't exist return to the login page
         return render(request, 'accounts/login.html')
 
     
